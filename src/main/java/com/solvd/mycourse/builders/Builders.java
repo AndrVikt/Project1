@@ -1,7 +1,5 @@
 package com.solvd.mycourse.builders;
 
-import com.solvd.mycourse.building.HomeComponents;
-
 import java.util.Objects;
 import java.util.logging.LogManager;
 import java.util.logging.Logger;

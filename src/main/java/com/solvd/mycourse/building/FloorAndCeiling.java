@@ -1,22 +1,31 @@
 package com.solvd.mycourse.building;
 
-import com.solvd.mycourse.myinterface.IColor;
+import com.solvd.mycourse.myinterface.ICalculator;
 
 import java.util.Objects;
+import java.util.Scanner;
 import java.util.logging.LogManager;
 import java.util.logging.Logger;
 
 public class FloorAndCeiling extends HomeComponents  {
     private String materialsOfFloor;
-    private String materialsOfCeiling;
     private static final Logger LOGGER = LogManager.getLogManager().getLogger(String.valueOf(FloorAndCeiling.class));
 
-    public FloorAndCeiling (double price, int amount, String materialsOfFloor, String materialsOfCeiling){
+    public FloorAndCeiling (double price, int amount, String materialsOfFloor){
         super(price, amount);
         this.materialsOfFloor = materialsOfFloor;
-        this.materialsOfCeiling = materialsOfCeiling;
     }
     public FloorAndCeiling () {
+    }
+    public void yourprice(){
+        //Scanner input = new Scanner(System.in);
+        double s = getAmount();
+        double price = getPrice();
+        double yourprice;
+        for (double i = 0; i < 600; i++){
+            yourprice = s * price;
+        LOGGER.info("the price of goods per area");
+        }
     }
 
 
@@ -24,17 +33,6 @@ public class FloorAndCeiling extends HomeComponents  {
         return materialsOfFloor;
     }
 
-    public void setMaterialsOfFloor(String materialsOfFloor) {
-        this.materialsOfFloor = materialsOfFloor;
-    }
-
-    public String getMaterialsOfCeiling() {
-        return materialsOfCeiling;
-    }
-
-    public void setMaterialsOfCeiling(String materialsOfCeiling) {
-        this.materialsOfCeiling = materialsOfCeiling;
-    }
 
     @Override
     public boolean equals(Object o) {
@@ -42,19 +40,13 @@ public class FloorAndCeiling extends HomeComponents  {
         if (o == null || getClass() != o.getClass()) return false;
         if (!super.equals(o)) return false;
         FloorAndCeiling that = (FloorAndCeiling) o;
-        return Objects.equals(materialsOfFloor, that.materialsOfFloor) && Objects.equals(materialsOfCeiling, that.materialsOfCeiling);
+        return Objects.equals(materialsOfFloor, that.materialsOfFloor);
+                //&& Objects.equals(materialsOfCeiling, that.materialsOfCeiling);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), materialsOfFloor, materialsOfCeiling);
+        return Objects.hash(super.hashCode(), materialsOfFloor);
     }
 
-    @Override
-    public String toString() {
-        return "FloorAndCeiling{" +
-                "materialsOfFloor='" + materialsOfFloor + '\'' +
-                ", materialsOfCeiling='" + materialsOfCeiling + '\'' +
-                '}';
-    }
 }

@@ -1,38 +1,100 @@
 package com.solvd.mycourse.building;
 
-import com.solvd.mycourse.builders.*;
+import com.solvd.mycourse.generics.RegistratedClient;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
+import javax.security.auth.login.AccountException;
+import java.net.PortUnreachableException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Scanner;
 
 public class Main {
     public static final Logger LOGGER = LogManager.getLogger(Main.class);
     public static void main(String[] args) {
 
-        public void components() {
+        RegistratedClient<String> acc1 = new RegistratedClient<String>(2522, "hjuj@gmail.com");
+        int acc1Id = acc1.getId();
+        LOGGER.info(acc1Id);
 
-            Roof roof = new Roof(256, 4, "metal Tile", "bitominous Tile");
-            Stairs stairs = new Stairs(140, 3, "wood");
-            Wall wall = new Wall(826, 1, "silicate brick", "ceramic brick");
-            Overlap overlap = new Overlap(999, 2, "monolithic Overlap", "wooden Overlap");
-            Interior interior = new Interior(100, 4, "pink flowers", "little lamp", "carpet");
-            Foundation foundation = new Foundation(181, 4, "", "");
-            FloorAndCeiling fc = new FloorAndCeiling(369, 2, "", "");
-            DoorAndWindow dw = new DoorAndWindow(180, 8, "", "", 18, 10, 33, 44);
 
-            RoofBuilder rb = new RoofBuilder("", 42, 7, 30, 1000, 5.5, 1);
-            InteriorDesigner ind = new InteriorDesigner();
-            Electrician electrician = new Electrician();
-            Director director = new Director();
-            BaseBuilder builder = new BaseBuilder();
+        Wall silicate = new Wall(40, 1, "silicate Brick");
+        Wall ceramic = new Wall(40, 1, "ceramic Brick");
+        Stairs woodenStairs = new Stairs(68, 1, "Wooden stairs");
+        Stairs contereStairs = new Stairs(68, 1, "Contere stairs");
+        Roof metalTile = new Roof(685, 1, "metal Tile");
+        Roof bitominousTile = new Roof(681, 1, "bitominous Tile");
+        Overlap monolithic = new Overlap(950, 1,"monolithic overlap");
+        Overlap woodenOverlap = new Overlap(900, 1, "wooden overlap");
+        Foundation pileFoundation = new Foundation(203.5, 1,"Pile Foundation");
+        Foundation tapeMonolithic = new Foundation(68, 1, "Tape Monolithic Foundation");
+        FloorAndCeiling euroMaterials = new FloorAndCeiling(90, 1,"Laminate");
+        FloorAndCeiling materials = new FloorAndCeiling(100, 1, "Tale");
 
-            LOGGER.info(.toString());
-            LOGGER.info(.toString());
-            LOGGER.info(.toString());
-            LOGGER.info(.toString());
-            LOGGER.info(.toString());
-            LOGGER.info(.toString());
-            LOGGER.info(Overlap.toString());
-            LOGGER.info(Roof.toString());
-            LOGGER.info(Wall.toString());
+        int finalPrice = 0;
+        Scanner an = new Scanner(System.in);
+        int answer = an.nextInt();
+        Scanner num = new Scanner(System.in);
+        int enternum = num.nextInt();
+        boolean purchase = true;
+        while(purchase){
+            switch (enternum) {
+                case 1:
+                    System.out.println("Enter to add silicate brick");
+                    finalPrice += silicate.getPrice();
+                    break;
+                case 2:
+                    finalPrice += ceramic.getPrice();
+                    break;
+                case 3:
+                    finalPrice += woodenStairs.getPrice();
+                    break;
+                case 4:
+                    finalPrice += contereStairs.getPrice();
+                    break;
+                case 5:
+                    finalPrice += metalTile.getPrice();
+                    break;
+                case 6:
+                    finalPrice += bitominousTile.getPrice();
+                    break;
+                case 7:
+                    finalPrice += monolithic.getPrice();
+                    break;
+                case 8:
+                    finalPrice += woodenOverlap.getPrice();
+                    break;
+                case 9:
+                    finalPrice += pileFoundation.getPrice();
+                    break;
+                case 10:
+                    finalPrice += tapeMonolithic.getPrice();
+                    break;
+                case 11:
+                    finalPrice += euroMaterials.getPrice();
+                    break;
+                case 12:
+                    finalPrice += materials.getPrice();
+                    break;
+                case 0:
+                    System.out.println("your price");
+                    System.out.println("you wanna leave? yes - 1, no - 2");
+                    if (answer == 1) {
+                        purchase = false;
+                    }else if(answer == 2){
+                        return;
+                    }else{
+                        LOGGER.info("incorrect answer");
+                    }
+                default:
+                    break;
+            }
+        }
+
+
+
+
     }
 }

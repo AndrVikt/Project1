@@ -1,42 +1,35 @@
 package com.solvd.mycourse.building;
 
+import com.solvd.mycourse.myinterface.IColor;
+
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.LogManager;
 import java.util.logging.Logger;
 
-public class Roof extends HomeComponents {
-    private String metalTile;
-    private String bitominousTile;
+public class Roof extends HomeComponents implements IColor {
+    private String tile;
     private static final Logger LOGGER = LogManager.getLogManager().getLogger(String.valueOf(Roof.class));
 
-    public Roof (double price, int amount, String metalTile, String bitominousTile){
+    public Roof (double price, int amount, String tile){
         super(price, amount);
-        this.metalTile = metalTile;
-        this.bitominousTile = bitominousTile;
+        this.tile = tile;
     }
-    public Roof () {
-    }
-
-    public String getMetalTile() {
-        return metalTile;
-    }
-
-    public void setMetalTile(String metalTile) {
-        this.metalTile = metalTile;
-    }
-
-    public String getBitominousTile() {
-        return bitominousTile;
-    }
-
-    public void setBitominousTile(String bitominousTile) {
-        this.bitominousTile = bitominousTile;
+    public Roof() {
     }
 
     @Override
-    public String toString() {
-        return "Roof{" +
-                "metalTile='" + metalTile + '\'' +
-                ", bitominousTile='" + bitominousTile + '\'' +
-                '}';
+    public void haveColor() {
+        LOGGER.info("we have 3 colors for the roof: red green and brown ");
     }
+
+    public String getTile() {
+        return tile;
+    }
+
+    public void setTile(String metalTile) {
+        this.tile = metalTile;
+    }
+
+
 }

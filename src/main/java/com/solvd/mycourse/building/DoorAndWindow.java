@@ -1,7 +1,6 @@
 package com.solvd.mycourse.building;
 
 import com.solvd.mycourse.exeptions.ExeptionOfDoor;
-import com.solvd.mycourse.exeptions.ExeptionOfElectrician;
 
 import java.util.Objects;
 import java.util.logging.LogManager;

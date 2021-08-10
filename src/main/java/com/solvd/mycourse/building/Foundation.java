@@ -5,31 +5,17 @@ import java.util.logging.LogManager;
 import java.util.logging.Logger;
 
 public class Foundation extends HomeComponents {
-    private String pileFoundation;
-    private String tapeMonolithic;
+    private String foundation;
     private static final Logger LOGGER = LogManager.getLogManager().getLogger(String.valueOf(Foundation.class));
 
-    public Foundation (double price, int amount, String pileFoundation, String tapeMonolithic){
+    public Foundation (double price, int amount, String foundation){
         super(price, amount);
-        this.pileFoundation = pileFoundation;
-        this.tapeMonolithic = tapeMonolithic;
+        this.foundation = foundation;
     }
     public Foundation () {
     }
     public String getPileFoundation() {
-        return pileFoundation;
-    }
-
-    public void setPileFoundation(String pileFoundation) {
-        this.pileFoundation = pileFoundation;
-    }
-
-    public String getTapeMonolithic() {
-        return tapeMonolithic;
-    }
-
-    public void setTapeMonolithic(String tapeMonolithic) {
-        this.tapeMonolithic = tapeMonolithic;
+        return foundation;
     }
 
     @Override
@@ -38,19 +24,12 @@ public class Foundation extends HomeComponents {
         if (o == null || getClass() != o.getClass()) return false;
         if (!super.equals(o)) return false;
         Foundation that = (Foundation) o;
-        return Objects.equals(pileFoundation, that.pileFoundation) && Objects.equals(tapeMonolithic, that.tapeMonolithic);
+        return Objects.equals(foundation, that.foundation) ;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), pileFoundation, tapeMonolithic);
+        return Objects.hash(super.hashCode(), foundation);
     }
 
-    @Override
-    public String toString() {
-        return "Foundation{" +
-                "pileFoundation='" + pileFoundation + '\'' +
-                ", tapeMonolithic='" + tapeMonolithic + '\'' +
-                '}';
-    }
 }

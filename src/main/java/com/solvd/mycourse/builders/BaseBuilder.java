@@ -1,16 +1,17 @@
 package com.solvd.mycourse.builders;
 
 import com.solvd.mycourse.exeptions.ExeptionWorkingHours;
+import com.solvd.mycourse.myinterface.ICompanyNumber;
 import jdk.jshell.JShell;
 
 import java.util.Objects;
 import java.util.logging.LogManager;
 import java.util.logging.Logger;
 
-public class BaseBuilder extends Builders {
+public class BaseBuilder extends Builders implements ICompanyNumber {
     private double workingHours;
     private static final Logger LOGGER = LogManager.getLogManager().getLogger(String.valueOf(BaseBuilder.class));
-    public void setWorkingHours(double workingHours) {
+    public void BaseBuilder(double workingHours) {
         this.workingHours = workingHours;
     }
 
@@ -19,6 +20,11 @@ public class BaseBuilder extends Builders {
             throw new ExeptionWorkingHours(workingHours);
         }
         this.workingHours = workingHours;
+    }
+
+    @Override
+    public void haveCompanyNumber() {
+        LOGGER.info("The number of the builder of the foundation can be found out from the director of the company");
     }
 
     public void giveBreakForFood (double time, Builders baseWorker) {

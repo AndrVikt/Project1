@@ -1,10 +1,12 @@
 package com.solvd.mycourse.builders;
 
+import com.solvd.mycourse.myinterface.ICompanyNumber;
+
 import java.util.Objects;
 import java.util.logging.LogManager;
 import java.util.logging.Logger;
 
-public class Director extends Builders{
+public class Director extends Builders implements ICompanyNumber {
     private int idDocuments;
     private final static String LAND_OWNERSHIP = "your land ownership";
     private final static String PASSPORT = "your passport data";
@@ -17,8 +19,15 @@ public class Director extends Builders{
     }
 
     public void Documents() {
-        LOGGER.info("We will not provide services to you if you do not have these documents: " + LAND_OWNERSHIP + ", " + PASSPORT +
+        LOGGER.info( "We will not provide services to you if you do not have these documents: " + LAND_OWNERSHIP + ", " + PASSPORT +
                 ", " + CONTRACT );
+    }
+
+    @Override
+    public void haveCompanyNumber() {
+        LOGGER.info("Builders mobile numbers");
+        LOGGER.info("Base builders 0691236548" +
+                "Electrician 0956842375" + "Roof builder 0986541235" + "Floor builder 0987456321" + "Door builder 0975463215" + "Designer 0659874563");
     }
 
     public int getIdDocuments() {
