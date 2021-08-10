@@ -44,7 +44,7 @@ public class InteriorDesigner extends Interior implements IColor, ICompanyNumber
     }
     public static void furnitureList(List<Interior> comp) {
         for (Interior components : comp) {
-            System.out.println(components);
+            LOGGER.info(String.valueOf(components));
         }
         }
     public static void summ(List<Interior> res){

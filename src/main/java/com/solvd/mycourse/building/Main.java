@@ -42,7 +42,7 @@ public class Main {
         while(purchase){
             switch (enternum) {
                 case 1:
-                    System.out.println("Enter to add silicate brick");
+                    LOGGER.info("Enter to add silicate brick");
                     finalPrice += silicate.getPrice();
                     break;
                 case 2:
@@ -79,8 +79,8 @@ public class Main {
                     finalPrice += materials.getPrice();
                     break;
                 case 0:
-                    System.out.println("your price");
-                    System.out.println("you wanna leave? yes - 1, no - 2");
+                    LOGGER.info("your price: " + finalPrice);
+                    LOGGER.info("you wanna leave? yes - 1, no - 2");
                     if (answer == 1) {
                         purchase = false;
                     }else if(answer == 2){
