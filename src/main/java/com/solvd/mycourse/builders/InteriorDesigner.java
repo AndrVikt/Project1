@@ -13,8 +13,10 @@ import java.util.logging.Logger;
 
 public class InteriorDesigner extends Interior implements IColor, ICompanyNumber {
     private static final Logger LOGGER = LogManager.getLogManager().getLogger(String.valueOf(InteriorDesigner.class));
-
-    public InteriorDesigner(){
+    public InteriorDesigner(double price, int amount, String furniture) {
+        super(price, amount, furniture);
+    }
+    public InteriorDesigner() {
     }
 
     @Override
@@ -24,34 +26,33 @@ public class InteriorDesigner extends Interior implements IColor, ICompanyNumber
 
     @Override
     public void haveColor() {
-       LOGGER.info("You can choose any color for your interior");
+        LOGGER.info("You can choose any color for your interior");
     }
 
-    public InteriorDesigner(double price, int amount, String furniture) {
-        super(price, amount, furniture);
-    }
-    public void furniture(){
+    public void furniture() {
         LOGGER.info("Our designer can offer you such furniture");
         List<Interior> inList = new ArrayList<>();
-        inList.add(new Interior(648 , 1,  "Bed"));
-        inList.add(new Interior(900, 1,  "armchair"));
+        inList.add(new Interior(648, 1, "Bed"));
+        inList.add(new Interior(900, 1, "armchair"));
         inList.add(new Interior(805.5, 1, "wardrobe"));
         inList.add(new Interior(200.10, 1, "lamp"));
         inList.add(new Interior(120, 1, "wallpaper"));
         inList.add(new Interior(300.99, 1, "carpet"));
         inList.add(new Interior(470, 1, "table"));
-        inList.add(new Interior(1080, 1,  "sofa"));
+        inList.add(new Interior(1080, 1, "sofa"));
     }
+
     public static void furnitureList(List<Interior> comp) {
         for (Interior components : comp) {
             LOGGER.info(String.valueOf(components));
         }
-        }
-    public static void summ(List<Interior> res){
-            double sum = 0;
-            for (Interior component : res){
-                sum += component.getPrice();
-                return;
+    }
+
+    public static void summ(List<Interior> res) {
+        double sum = 0;
+        for (Interior component : res) {
+            sum += component.getPrice();
+            return;
         }
     }
 }

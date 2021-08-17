@@ -5,20 +5,23 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Scanner;
+import java.util.logging.LogManager;
+import java.util.logging.Logger;
 
 public class Cashier {
-
+    private static final Logger LOGGER = LogManager.getLogManager().getLogger(String.valueOf(Cashier.class));
     Map<String, Double> cart;
-    BufferedReader bf;;
+    Scanner s = new Scanner(String.in);;
 
     public Cashier() throws NumberFormatException, IOException {
         cart = new HashMap<>();
-        bf = new BufferedReader(new InputStreamReader(System.in));
+        s = new BufferedReader(new InputStreamReader(System.in));
         int i = 1;
         while (true){
-            System.out.println("enter 1 for new product, enter 2 for exit");
+            LOGGER.info("enter 1 for new product, enter 2 for exit");
             try {
-                i = Integer.parseInt(bf.readLine());
+                i = Integer.parseInt(s.readLine());
             } catch (NumberFormatException e) {
                 // TODO Auto-generated catch block
                 e.printStackTrace();
@@ -29,14 +32,14 @@ public class Cashier {
             if (i == 1) addGood();
             if (i == 2) break;
         }
-        System.out.println("Total purchase cost: " + countSum());
+        LOGGER.info("Total purchase cost: " + countSum());
     }
 
     public void addGood() throws NumberFormatException, IOException{
-        System.out.println("Enter the name of the product: ");
-        String name = bf.readLine();
-        System.out.println("Enter the cost of the product: ");
-        double price = Double.parseDouble(bf.readLine());
+        LOGGER.info("Enter the name of the product: ");
+        String name = s.readLine();
+        LOGGER.info("Enter the cost of the product: ");
+        double price = Double.parseDouble(s.readLine());
 
         cart.computeIfPresent(name, (k,v) -> v+price);
         cart.putIfAbsent(name, price);

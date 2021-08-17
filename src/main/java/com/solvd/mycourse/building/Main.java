@@ -1,5 +1,7 @@
 package com.solvd.mycourse.building;
 
+import com.solvd.mycourse.generics.BuildersLunch;
+import com.solvd.mycourse.generics.DocumentsOfBuilders;
 import com.solvd.mycourse.generics.RegistratedClient;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -15,10 +17,17 @@ public class Main {
     public static final Logger LOGGER = LogManager.getLogger(Main.class);
     public static void main(String[] args) {
 
-        RegistratedClient<String> acc1 = new RegistratedClient<String>(2522, "hjuj@gmail.com");
-        int acc1Id = acc1.getId();
+        RegistratedClient<Integer> acc1 = new RegistratedClient<Integer>(2522, "hjuj@gmail.com");
+        Integer acc1Id = acc1.getId();
         LOGGER.info(acc1Id);
 
+        DocumentsOfBuilders<String> doc = new DocumentsOfBuilders<String>("Every builder must have ");
+        List<String> doc1 = doc.getBuildinfo();
+        LOGGER.info(doc1);
+
+        BuildersLunch<String > food = new BuildersLunch<String>("soup", "puree","tea");
+        Integer f = acc1.getId();
+        LOGGER.info(acc1Id);
 
         Wall silicate = new Wall(40, 1, "silicate Brick");
         Wall ceramic = new Wall(40, 1, "ceramic Brick");
@@ -90,6 +99,7 @@ public class Main {
                     }
                 default:
                     break;
+
             }
         }
 

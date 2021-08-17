@@ -17,12 +17,12 @@ public class FloorAndCeiling extends HomeComponents  {
     }
     public FloorAndCeiling () {
     }
-    public void yourprice(){
-        //Scanner input = new Scanner(System.in);
+    public void yourPrice(){
+        Scanner input = new Scanner(System.in);
         double s = getAmount();
         double price = getPrice();
         double yourprice;
-        for (double i = 0; i < 600; i++){
+        for (int i = 0; i < 600; i++){
             yourprice = s * price;
         LOGGER.info("the price of goods per area");
         }

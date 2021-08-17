@@ -2,20 +2,19 @@ package com.solvd.mycourse.builders;
 
 import com.solvd.mycourse.exeptions.ExeptionWorkingHours;
 import com.solvd.mycourse.myinterface.ICompanyNumber;
-import jdk.jshell.JShell;
 
 import java.util.Objects;
 import java.util.logging.LogManager;
 import java.util.logging.Logger;
 
-public class BaseBuilder extends Builders implements ICompanyNumber {
+public class FoundationBuilders extends Builders implements ICompanyNumber {
     private double workingHours;
-    private static final Logger LOGGER = LogManager.getLogManager().getLogger(String.valueOf(BaseBuilder.class));
+    private static final Logger LOGGER = LogManager.getLogManager().getLogger(String.valueOf(FoundationBuilders.class));
     public void BaseBuilder(double workingHours) {
         this.workingHours = workingHours;
     }
 
-    public BaseBuilder(double workingHours) {
+    public FoundationBuilders(double workingHours) {
         if (workingHours == 0) {
             throw new ExeptionWorkingHours(workingHours);
         }
@@ -42,7 +41,7 @@ public class BaseBuilder extends Builders implements ICompanyNumber {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        BaseBuilder that = (BaseBuilder) o;
+        FoundationBuilders that = (FoundationBuilders) o;
         return Double.compare(that.workingHours, workingHours) == 0;
     }
 

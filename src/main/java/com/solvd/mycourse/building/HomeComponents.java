@@ -5,7 +5,7 @@ import java.util.Objects;
 import java.util.logging.LogManager;
 import java.util.logging.Logger;
 
-public class HomeComponents {
+public abstract class HomeComponents {
     private double price;
     private int amount;
     private static final Logger LOGGER = LogManager.getLogManager().getLogger(String.valueOf(HomeComponents.class));
