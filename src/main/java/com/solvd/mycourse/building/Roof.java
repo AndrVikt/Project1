@@ -1,15 +1,15 @@
 package com.solvd.mycourse.building;
 
 import com.solvd.mycourse.myinterface.IColor;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.LogManager;
-import java.util.logging.Logger;
 
 public class Roof extends HomeComponents implements IColor {
     private String tile;
-    private static final Logger LOGGER = LogManager.getLogManager().getLogger(String.valueOf(Roof.class));
+    private static final Logger LOGGER = LogManager.getLogger(Roof.class);
 
     public Roof (double price, int amount, String tile){
         super(price, amount);

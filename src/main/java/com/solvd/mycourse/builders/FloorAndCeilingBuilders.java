@@ -2,12 +2,11 @@ package com.solvd.mycourse.builders;
 
 import com.solvd.mycourse.myinterface.IColor;
 import com.solvd.mycourse.myinterface.IWholesale;
-
-import java.util.logging.LogManager;
-import java.util.logging.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class FloorAndCeilingBuilders extends Builders implements IColor, IWholesale {
-    private static final Logger LOGGER = LogManager.getLogManager().getLogger(String.valueOf(FloorAndCeilingBuilders.class));
+    private static final Logger LOGGER = LogManager.getLogger(FloorAndCeilingBuilders.class);
 
     public void haveColor(){
         LOGGER.info("Our company can provide you with any colors");

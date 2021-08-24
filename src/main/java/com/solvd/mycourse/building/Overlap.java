@@ -1,12 +1,13 @@
 package com.solvd.mycourse.building;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.util.Objects;
-import java.util.logging.LogManager;
-import java.util.logging.Logger;
 
 public class Overlap extends HomeComponents {
     private String overlap;
-    private static final Logger LOGGER = LogManager.getLogManager().getLogger(String.valueOf(Overlap.class));
+    private static final Logger LOGGER = LogManager.getLogger(Overlap.class);
 
     public Overlap (double price, int amount, String overlap){
         super(price, amount);

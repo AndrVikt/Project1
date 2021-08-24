@@ -2,14 +2,14 @@ package com.solvd.mycourse.builders;
 
 import com.solvd.mycourse.exeptions.ExeptionWorkingHours;
 import com.solvd.mycourse.myinterface.ICompanyNumber;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.Objects;
-import java.util.logging.LogManager;
-import java.util.logging.Logger;
 
 public class FoundationBuilders extends Builders implements ICompanyNumber {
     private double workingHours;
-    private static final Logger LOGGER = LogManager.getLogManager().getLogger(String.valueOf(FoundationBuilders.class));
+    private static final Logger LOGGER = LogManager.getLogger(FoundationBuilders.class);
     public void BaseBuilder(double workingHours) {
         this.workingHours = workingHours;
     }

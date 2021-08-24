@@ -1,12 +1,13 @@
 package com.solvd.mycourse.building;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.util.Objects;
-import java.util.logging.LogManager;
-import java.util.logging.Logger;
 
 public class Foundation extends HomeComponents {
     private String foundation;
-    private static final Logger LOGGER = LogManager.getLogManager().getLogger(String.valueOf(Foundation.class));
+    private static final Logger LOGGER = LogManager.getLogger(Foundation.class);
 
     public Foundation (double price, int amount, String foundation){
         super(price, amount);

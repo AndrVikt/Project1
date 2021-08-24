@@ -13,14 +13,6 @@ public enum BuildersDocument {
     public String getDoc() {
         return doc;
     }
-
-    public void setDoc(String doc) {
-        this.doc = doc;
-    }
-
-    public String getDocuments() {
-        return this.doc;
-    }
 }
 
 

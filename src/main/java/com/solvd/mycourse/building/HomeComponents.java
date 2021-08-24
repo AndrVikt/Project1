@@ -1,14 +1,15 @@
 package com.solvd.mycourse.building;
 
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.util.Objects;
-import java.util.logging.LogManager;
-import java.util.logging.Logger;
 
 public abstract class HomeComponents {
     private double price;
     private int amount;
-    private static final Logger LOGGER = LogManager.getLogManager().getLogger(String.valueOf(HomeComponents.class));
+    private static final Logger LOGGER = LogManager.getLogger(HomeComponents.class);
     public HomeComponents(double price, int amount){
         this.price = price;
         this.amount = amount;

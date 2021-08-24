@@ -1,11 +1,11 @@
 package com.solvd.mycourse.building;
 
-import java.util.logging.LogManager;
-import java.util.logging.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class Interior extends HomeComponents {
     private String furniture;
-    private static final Logger LOGGER = LogManager.getLogManager().getLogger(String.valueOf(Interior.class));
+    private static final Logger LOGGER = LogManager.getLogger(Interior.class);
 
     public Interior (double price, int amount, String furniture){
         super(price, amount);

@@ -1,11 +1,11 @@
 package com.solvd.mycourse.building;
 
-import java.util.logging.LogManager;
-import java.util.logging.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class Stairs extends HomeComponents {
     private String matelialOfStairs;
-    private static final Logger LOGGER = LogManager.getLogManager().getLogger(String.valueOf(Stairs.class));
+    private static final Logger LOGGER = LogManager.getLogger(Stairs.class);
 
     public Stairs (double price, int amount, String matelialOfStairs){
         super(price, amount);

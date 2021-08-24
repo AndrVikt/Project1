@@ -1,15 +1,14 @@
 package com.solvd.mycourse.building;
 
-import com.solvd.mycourse.myinterface.ICalculator;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.Objects;
 import java.util.Scanner;
-import java.util.logging.LogManager;
-import java.util.logging.Logger;
 
 public class FloorAndCeiling extends HomeComponents  {
     private String materialsOfFloor;
-    private static final Logger LOGGER = LogManager.getLogManager().getLogger(String.valueOf(FloorAndCeiling.class));
+    private static final Logger LOGGER = LogManager.getLogger(FloorAndCeiling.class);
 
     public FloorAndCeiling (double price, int amount, String materialsOfFloor){
         super(price, amount);
@@ -18,15 +17,15 @@ public class FloorAndCeiling extends HomeComponents  {
     public FloorAndCeiling () {
     }
     public void yourPrice(){
-        Scanner input = new Scanner(System.in);
+
         double s = getAmount();
         double price = getPrice();
+        var lambdaContext = new Object() {
         double yourprice;
-        for (int i = 0; i < 600; i++){
-            yourprice = s * price;
+        };
+        input.chars().forEach(c -> lambdaContext.yourprice = s * price;
         LOGGER.info("the price of goods per area");
         }
-    }
 
 
     public String getMaterialsOfFloor() {

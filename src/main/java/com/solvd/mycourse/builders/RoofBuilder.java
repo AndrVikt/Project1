@@ -1,13 +1,12 @@
 package com.solvd.mycourse.builders;
 
 import com.solvd.mycourse.exeptions.ExeptionOfElectrician;
-
-import java.util.logging.LogManager;
-import java.util.logging.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class RoofBuilder extends Builders{
     private int saferyRope;
-    private static final Logger LOGGER = LogManager.getLogManager().getLogger(String.valueOf(RoofBuilder.class));
+    private static final Logger LOGGER = LogManager.getLogger(RoofBuilder.class);
 
     public RoofBuilder(String  name, int age, int amount, int constructionTime, double price, double Break, int saferyRope) {
         super(name, age, amount, constructionTime, price, Break);

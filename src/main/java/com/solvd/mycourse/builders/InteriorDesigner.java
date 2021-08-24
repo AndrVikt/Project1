@@ -1,18 +1,17 @@
 package com.solvd.mycourse.builders;
 
 import com.solvd.mycourse.building.Interior;
-import com.solvd.mycourse.myinterface.ICalculator;
 import com.solvd.mycourse.myinterface.IColor;
 import com.solvd.mycourse.myinterface.ICompanyNumber;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.logging.LogManager;
-import java.util.logging.Logger;
 
 public class InteriorDesigner extends Interior implements IColor, ICompanyNumber {
-    private static final Logger LOGGER = LogManager.getLogManager().getLogger(String.valueOf(InteriorDesigner.class));
+    private static final Logger LOGGER = LogManager.getLogger(InteriorDesigner.class);
     public InteriorDesigner(double price, int amount, String furniture) {
         super(price, amount, furniture);
     }
@@ -48,9 +47,10 @@ public class InteriorDesigner extends Interior implements IColor, ICompanyNumber
         }
     }
 
-    public static void summ(List<Interior> res) {
+    public static void suma(List<Interior> res) {
         double sum = 0;
-        for (Interior component : res) {
+        for (Interior component : res)
+        {
             sum += component.getPrice();
             return;
         }

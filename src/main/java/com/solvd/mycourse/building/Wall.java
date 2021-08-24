@@ -1,12 +1,12 @@
 package com.solvd.mycourse.building;
 
-import java.util.logging.LogManager;
-import java.util.logging.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class Wall extends HomeComponents {
     private String brick;
 
-    private static final Logger LOGGER = LogManager.getLogManager().getLogger(String.valueOf(Wall.class));
+    private static final Logger LOGGER = LogManager.getLogger(Wall.class);
 
     public Wall (double price, int amount, String brick){
         super(price, amount);

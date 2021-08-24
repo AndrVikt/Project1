@@ -1,10 +1,10 @@
 package com.solvd.mycourse.building;
 
 import com.solvd.mycourse.exeptions.ExeptionOfDoor;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.Objects;
-import java.util.logging.LogManager;
-import java.util.logging.Logger;
 
 public class DoorAndWindow extends HomeComponents {
     private double heightDoor;
@@ -13,7 +13,7 @@ public class DoorAndWindow extends HomeComponents {
     private double widthWindow;
     private String materialOfDoor;
     private String materialOfWindow;
-    private static final Logger LOGGER = LogManager.getLogManager().getLogger(String.valueOf(DoorAndWindow.class));
+    private static final Logger LOGGER = LogManager.getLogger(DoorAndWindow.class);
 
     public DoorAndWindow (double price, int amount, String materialOfDoor, String materialOfWindow, double heightDoor, double widthDoor,
                           double heightWindow, double widthWindow){

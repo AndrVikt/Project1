@@ -1,23 +1,25 @@
 package com.solvd.mycourse.generics;
 
-import com.solvd.mycourse.builders.Builders;
-
 import java.util.ArrayList;
 import java.util.List;
 
-public class DocumentsOfBuilders <T extends Builders> {
+public class DocumentsOfBuilders <T> {
     private T inform;
-    private List<T> buildinfo = new ArrayList<>();
-    public DocumentsOfBuilders(List<T> buildinfo) {
-        this.buildinfo = buildinfo;
+    private List<T> buildInfo = new ArrayList<>();
+
+    public DocumentsOfBuilders(T inform, List<T> buildInfo) {
+        this.inform = inform;
+        this.buildInfo = buildInfo;
     }
 
-
-    public List<T> getBuildinfo() {
-        return buildinfo;
+    public DocumentsOfBuilders(T s) {
     }
 
-    public void setBuildinfo(List<T> buildinfo) {
-        this.buildinfo = buildinfo;
+    public List<T> getBuildInfo() {
+        return buildInfo;
+    }
+
+    public void setBuildInfo(List<T> buildInfo) {
+        this.buildInfo = buildInfo;
     }
 }

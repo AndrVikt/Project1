@@ -1,8 +1,9 @@
 package com.solvd.mycourse.builders;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.util.Objects;
-import java.util.logging.LogManager;
-import java.util.logging.Logger;
 
 public abstract class Builders {
     private String name;
@@ -11,7 +12,7 @@ public abstract class Builders {
     private int constructionTime;
     private double price;
     private double Break;
-    private static final Logger LOGGER = LogManager.getLogManager().getLogger(String.valueOf(Builders.class));
+    private static final Logger LOGGER = LogManager.getLogger(Builders.class);
 
     public Builders(String  name, int age, int amount, int constructionTime, double price, double Break){
         this.name = name;
