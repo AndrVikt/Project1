@@ -14,6 +14,9 @@ public class Electrician extends Builder {
         this.tools = tools;
         this.cable = cable;
     }
+    public Electrician() {
+    }
+
     public Electrician(int tools) {
         if (tools == 0) {
             throw new ExeptionOfElectrician(tools);

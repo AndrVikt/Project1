@@ -12,12 +12,16 @@ public class RoofBuilder extends Builder {
         super(name, age, amount, constructionTime, price, Break);
         this.saferyRope = saferyRope;
     }
+    public RoofBuilder() {
+    }
+
     public RoofBuilder(int saferyRope) {
         if (saferyRope == 0) {
             throw new ExeptionOfElectrician(saferyRope);
         }
         this.saferyRope = saferyRope;
     }
+
 
     public int getSaferyRope() {
         return saferyRope;

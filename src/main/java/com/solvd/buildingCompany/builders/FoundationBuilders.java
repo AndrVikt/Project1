@@ -10,6 +10,10 @@ import java.util.Objects;
 public class FoundationBuilders extends Builder implements ICompanyNumber {
     private double workingHours;
     private static final Logger LOGGER = LogManager.getLogger(FoundationBuilders.class);
+
+    public FoundationBuilders() {
+    }
+
     public void BaseBuilder(double workingHours) {
         this.workingHours = workingHours;
     }
@@ -26,7 +30,7 @@ public class FoundationBuilders extends Builder implements ICompanyNumber {
         LOGGER.info("The number of the builder of the foundation can be found out from the director of the company");
     }
 
-    public void giveBreakForFood (double time, Builder baseWorker) {
+    public void giveBreakForFood (double time, Builder baseWorker)  {
         if (time == 13.30) {
             baseWorker.giveBreak(baseWorker.getBreak());
         } else {

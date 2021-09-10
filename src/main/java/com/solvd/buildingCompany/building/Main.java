@@ -1,8 +1,7 @@
 package com.solvd.buildingCompany.building;
 
 import com.solvd.buildingCompany.enums.BuildersDocument;
-import com.solvd.buildingCompany.enums.ConstructionStores;
-import com.solvd.buildingCompany.enums.RegisteredCustomers;
+import com.solvd.buildingCompany.enums.WeekendForBuilders;
 import com.solvd.buildingCompany.generics.BuildersLunch;
 import com.solvd.buildingCompany.generics.DocumentsOfBuilders;
 import com.solvd.buildingCompany.generics.RegistratedClient;
@@ -27,28 +26,10 @@ public class Main {
         Integer f = acc1.getId();
         LOGGER.info(acc1Id);
 
-        BuildersDocument buildersDocument = BuildersDocument.CARD;
-        LOGGER.info(buildersDocument.getDoc());
-        BuildersDocument buildersDocument2 = BuildersDocument.EBOOK;
-        LOGGER.info(buildersDocument2.getDoc());
-        BuildersDocument buildersDocument3 = BuildersDocument.PASSPORT;
-        LOGGER.info(buildersDocument3.getDoc());
-
-        ConstructionStores constructionStores = ConstructionStores.STORE_1;
-        LOGGER.info(constructionStores.getSt());
-        ConstructionStores constructionStores2 = ConstructionStores.STORE_2;
-        LOGGER.info(constructionStores2.getSt());
-        ConstructionStores constructionStores3 = ConstructionStores.STORE_3;
-        LOGGER.info(constructionStores3.getSt());
-        LOGGER.info("the following steps are required for registration");
-
-        RegisteredCustomers registeredStep = RegisteredCustomers.ID;
-        LOGGER.info("the following steps are required for registration");
-        LOGGER.info(registeredStep.getInfo());
-        RegisteredCustomers registeredStep2 = RegisteredCustomers.NAME;
-        LOGGER.info(registeredStep2.getInfo());
-        RegisteredCustomers registeredStep3 = RegisteredCustomers.DOCUMENT_NUMBER;
-        LOGGER.info(registeredStep3.getInfo());
+        for (BuildersDocument document : BuildersDocument.values()) {
+             LOGGER.info("Presentation of documents");
+            LOGGER.info(document + ", " + document.getDoc());
+        }
 
         Wall silicate = new Wall(40,  "silicate Brick");
         Wall ceramic = new Wall(40,  "ceramic Brick");
@@ -113,7 +94,7 @@ public class Main {
                 case 0:
                     LOGGER.info("your price: " + finalPrice);
                     LOGGER.info("you wanna leave? yes - 1, no - 2");
-                    if (answer == 1) {
+                    if (answer == 1)  {
                         purchase = false;
                     }else if(answer == 2){
                         return;

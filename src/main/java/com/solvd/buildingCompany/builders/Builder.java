@@ -22,10 +22,17 @@ public abstract class Builder {
         this.constructionTime = constructionTime;
         this.price = price;
         this.Break = Break;
-
     }
     public Builder() {
     }
+
+    public void measureTheArea(){
+    }
+    public void buyMaterials(){
+    }
+    public void build(){
+    }
+
     public void giveBreak(double Break) {
         LOGGER.info("Your break," + this.name + ", starts at" + this.Break + "o`clock");
     }

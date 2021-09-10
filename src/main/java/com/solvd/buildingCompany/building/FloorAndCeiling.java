@@ -16,6 +16,7 @@ public class FloorAndCeiling extends HomeComponents  {
     public FloorAndCeiling () {
     }
 
+
     public String getMaterialsOfFloor() {
         return materialsOfFloor;
     }

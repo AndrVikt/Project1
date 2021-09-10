@@ -47,7 +47,7 @@ public class Threads {
         };
         for (int i=0; i<8;i++){
             threads.add(new Thread(r, "thread "+ i));
-            threads.get(i).start();
+            threads.get(i).run();
         }
         LOGGER.info("Main thread finished...");
 

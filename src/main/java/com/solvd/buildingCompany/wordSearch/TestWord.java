@@ -4,11 +4,15 @@ import java.io.File;
 import java.io.IOException;
 import java.util.*;
 
+import com.solvd.buildingCompany.builders.RoofBuilder;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 
 public class TestWord {
+        private static final Logger LOGGER = LogManager.getLogger(TestWord.class);
         public static final List<String> symbolsBefore = Arrays.asList("\"", " ");
         public static final List<String> symbolsAfter = Arrays.asList("\"", " ", ".", "'", ";");
         public static void main(String[] args) {
@@ -52,7 +56,7 @@ public class TestWord {
                     }
                 }
                 catch (IOException ex){
-                    System.out.println(ex.getMessage());
+                    LOGGER.info(ex.getMessage());
                 }
             }
         }
