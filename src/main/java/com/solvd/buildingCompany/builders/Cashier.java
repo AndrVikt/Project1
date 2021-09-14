@@ -46,10 +46,7 @@ public class Cashier {
     }
 
     public double countSum() {
-        double sum = 0;
-        for (Map.Entry<String, Double> entry : cart.entrySet()) {
-            sum += entry.getValue();
-        }
+        double sum = cart.values().stream().mapToDouble(v -> v).sum();
         return sum;
     }
 }

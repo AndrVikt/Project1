@@ -34,7 +34,7 @@ public class TestWord {
                     for (String line: fileLines) {
                         if (!StringUtils.isAllEmpty(line)){
                             line = " " + line.toLowerCase(Locale.ROOT)+" ";
-                            for (String word : words){
+                            for (String word : words) {
                                 String lowerCaseWord = word.toLowerCase(Locale.ROOT);
                                 List<String> possibleVariations = new ArrayList<>();
                                 for(String bs:symbolsBefore){
